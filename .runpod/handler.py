@@ -12,16 +12,16 @@ llm = LLM(
     max_model_len=8192
 )
 
-def handler(job):
+def handler(event):
     """
     RunPod 傳入的是一個 job 物件，輸入資料在 job["input"]
     """
-    job_input = job["input"]
-    prompt = job_input.get("prompt", "你好")
+    input_data = event["input"]
+    prompt = input_data.get("prompt", "你好")
     
     sampling_params = SamplingParams(
-        temperature=job_input.get("temperature", 0.7),
-        max_tokens=job_input.get("max_tokens", 1024)
+        temperature=input_data.get("temperature", 0.7),
+        max_tokens=input_data.get("max_tokens", 1024)
     )
 
     outputs = llm.generate([prompt], sampling_params)
