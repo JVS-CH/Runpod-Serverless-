@@ -1,19 +1,19 @@
-# 使用 2026 年最新的 vLLM 官方鏡像，內建編譯好的環境
+# 使用 vLLM 官方鏡像
 FROM vllm/vllm-openai:latest
 
-# 設定工作目錄
 WORKDIR /app
 
-# 安裝 RunPod SDK
+# 安裝必要套件
 RUN pip install --no-cache-dir runpod
 
-# 複製處理程式
 COPY handler.py .
 
-# 設定環境變數預設值 (可以在 RunPod 介面覆蓋)
 ENV MODEL_PATH="/runpod-volume/model"
 ENV TENSOR_PARALLEL=1
 
-# 啟動指令：使用 python 執行 handler.py
-# -u 確保日誌即時輸出，方便在 RunPod Log 查看
-CMD ["python", "-u", "handler.py"]
+# --- 關鍵修正處 ---
+# 強制重設 ENTRYPOINT 為空，確保 CMD 能獨立執行
+ENTRYPOINT []
+
+# 啟動指令
+CMD ["python3", "-u", "handler.py"]
