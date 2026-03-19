@@ -1,0 +1,16 @@
+{
+  "tests": [
+    {
+      "name": "Basic Prompt Test",
+      "input": {
+        "prompt": "Hello, who are you?",
+        "max_tokens": 50
+      },
+      "timeout": 30000
+    }
+  ],
+  "config": {
+    "gpuTypeId": "NVIDIA GeForce RTX 4090",
+    "gpuCount": 1
+  }
+}
