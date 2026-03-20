@@ -7,7 +7,7 @@
     "runsOn": "GPU",
     "containerDiskInGb": 40,
     "gpuCount": 1,
-    "gpuIds": "NVIDIA GeForce RTX 5090",
+    "gpuIds": "ADA_32_PRO,AMPERE_80,BLACKWELL_96",
     "env": [
       {
         "key": "MODEL_PATH",
