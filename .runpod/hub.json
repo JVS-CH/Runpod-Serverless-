@@ -1,13 +1,13 @@
 {
   "title": "Qwen 3.5 35B-A3B Inference",
-  "description": "阿里雲 Qwen 3.5 推論工具，採用 vLLM 引擎，專為 RTX 4090 優化。",
+  "description": "阿里雲 Qwen 3.5 推論工具，採用 vLLM 引擎，專為 RTX 5090 優化。",
   "type": "serverless",
   "category": "language",
   "config": {
     "runsOn": "GPU",
     "containerDiskInGb": 40,
     "gpuCount": 1,
-    "gpuIds": "NVIDIA GeForce RTX 4090",
+    "gpuIds": "NVIDIA GeForce RTX 5090",
     "env": [
       {
         "key": "MODEL_PATH",
